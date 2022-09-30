@@ -37,12 +37,15 @@ export default {
   },
   methods: {
     addTodo(e){
-      this.todos.push({
-        id: Math.random(),
-        text: e.target.value,
-        checked: false
-      });
-
+      if(e.target.value == ''){
+        alert("Todo를 입력해주세요");
+      }else{
+        this.todos.push({
+          id: Math.random(),
+          text: e.target.value,
+          checked: false
+        });
+      }
       this.todoText = '';
     },
     checkChange({id, checked}){
